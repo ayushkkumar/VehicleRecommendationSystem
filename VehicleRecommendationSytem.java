@@ -1,7 +1,4 @@
-import java.util.Scanner;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 class Vehicle {
     private final int locationId;
@@ -112,9 +109,29 @@ public class VehicleRecommendationSystem {
             // If no vehicles are found as per the user's needs
             System.out.println("Sorry for the inconvenience, no vehicles found");
         }
-        for (Vehicle vehicle : recommendedVehicles) {
-            System.out.println(vehicle.getVehicleNo() + "," + vehicle.getVehicleCategory() +
-                    "," + vehicle.getDriverContactNo());
+        // Checking for car
+        for (Vehicle vehicle : recommendedVehicles){
+            if(Objects.equals(vehicle.getVehicleCategory(), "car")){
+                System.out.println(vehicle.getVehicleNo() + "," + vehicle.getVehicleCategory() +
+                        "," + vehicle.getDriverContactNo());
+                break;
+            }
+        }
+        // Checking for auto
+        for (Vehicle vehicle : recommendedVehicles){
+            if(Objects.equals(vehicle.getVehicleCategory(), "auto")){
+                System.out.println(vehicle.getVehicleNo() + "," + vehicle.getVehicleCategory() +
+                        "," + vehicle.getDriverContactNo());
+                break;
+            }
+        }
+        // Checking for bike
+        for (Vehicle vehicle : recommendedVehicles){
+            if(Objects.equals(vehicle.getVehicleCategory(), "bike")){
+                System.out.println(vehicle.getVehicleNo() + "," + vehicle.getVehicleCategory() +
+                        "," + vehicle.getDriverContactNo());
+                break;
+            }
         }
     }
 }
